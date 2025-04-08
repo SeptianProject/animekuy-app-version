@@ -1,3 +1,4 @@
+import 'package:animekuy/utils/constants.dart';
 import 'package:flutter/material.dart';
 import '../models/anime.dart';
 import '../screens/anime_detail_screen.dart';
@@ -54,6 +55,7 @@ class AnimeCard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
+                  color: Color(ColorsConstants.textColor), 
                 ),
               ),
             ),
@@ -64,7 +66,10 @@ class AnimeCard extends StatelessWidget {
                 const SizedBox(width: 4),
                 Text(
                   anime.rating.toString(),
-                  style: const TextStyle(fontSize: 12),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(ColorsConstants.textColor),
+                  ),
                 ),
               ],
             ),

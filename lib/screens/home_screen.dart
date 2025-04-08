@@ -77,7 +77,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('AnimeKuy')),
+      backgroundColor: const Color(
+        ColorsConstants.backgroundColor,
+      ), // Set background color to dark
+      appBar: AppBar(
+        title: const Text(
+          'AnimeKuy',
+          style: TextStyle(color: Color(ColorsConstants.textColor)),
+        ), // Set text color to white
+        backgroundColor: const Color(
+          ColorsConstants.surfaceColor,
+        ), // Set AppBar background to secondary dark
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -103,16 +114,28 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
+              leading: const Icon(
+                Icons.home,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'Home',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               selected: true,
               onTap: () {
                 Navigator.pop(context); // tutup drawer
               },
             ),
             ListTile(
-              leading: const Icon(Icons.search),
-              title: const Text('Search'),
+              leading: const Icon(
+                Icons.search,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'Search',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               onTap: () {
                 Navigator.pop(context); // tutup drawer
                 Navigator.push(
@@ -122,16 +145,28 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.explore),
-              title: const Text('Explore'),
+              leading: const Icon(
+                Icons.explore,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'Explore',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 // Navigate ke explore screen
               },
             ),
             ListTile(
-              leading: const Icon(Icons.favorite),
-              title: const Text('Favorites'),
+              leading: const Icon(
+                Icons.favorite,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'Favorites',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 // Navigate ke favorites screen
@@ -139,16 +174,28 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
+              leading: const Icon(
+                Icons.settings,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'Settings',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 // Navigate ke settings screen
               },
             ),
             ListTile(
-              leading: const Icon(Icons.info),
-              title: const Text('About'),
+              leading: const Icon(
+                Icons.info,
+                color: Color(ColorsConstants.textColor),
+              ),
+              title: const Text(
+                'About',
+                style: TextStyle(color: Color(ColorsConstants.textColor)),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 // Navigate ke about screen
@@ -167,7 +214,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Trending Anime',
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.headlineSmall?.copyWith(
+                        color: const Color(ColorsConstants.textColor),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -188,7 +239,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Categories',
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.headlineSmall?.copyWith(
+                        color: const Color(ColorsConstants.textColor),
+                      ),
                     ),
                   ),
 
@@ -237,7 +292,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       '$_selectedCategory Anime',
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: const Color(ColorsConstants.textColor),
+                      ),
                     ),
                   ),
 
@@ -253,7 +310,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ? const Center(
                         child: Padding(
                           padding: EdgeInsets.all(32.0),
-                          child: Text('No anime found for this category'),
+                          child: Text(
+                            'No anime found for this category',
+                            style: TextStyle(
+                              color: Color(ColorsConstants.textColor),
+                            ),
+                          ),
                         ),
                       )
                       : GridView.builder(

@@ -16,10 +16,16 @@ class _AnimeDetailScreenState extends State<AnimeDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.anime.title),
+        title: Text(
+          widget.anime.title,
+          style: const TextStyle(color: Colors.white),
+        ), // Set text color to white
         actions: [
           IconButton(
-            icon: const Icon(Icons.favorite_border),
+            icon: const Icon(
+              Icons.favorite_border,
+              color: Colors.white,
+            ), // Set icon color to white
             onPressed: () {
               // Toggle favorite
             },
@@ -44,21 +50,34 @@ class _AnimeDetailScreenState extends State<AnimeDetailScreen> {
                 children: [
                   Text(
                     widget.anime.title,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: Colors.white,
+                    ), // Set text color to white
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Rating: ${widget.anime.rating}',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                    ), // Set text color to white
                   ),
                   const SizedBox(height: 16),
-                  Text(widget.anime.synopsis),
+                  Text(
+                    widget.anime.synopsis,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ), // Set text color to white
+                  ),
                   const SizedBox(height: 24),
 
                   // Video Player placeholder
                   const Text(
                     'Episodes:',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ), // Set text color to white
                   ),
                   const SizedBox(height: 8),
                   const AnimeVideoPlayer(videoUrl: 'placeholder_url'),
